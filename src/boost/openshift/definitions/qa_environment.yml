@@ -1,0 +1,6 @@
+---
+# QA Environment definition
+qa_environment:
+  test: true
+  setup:
+    - name: boostcd.amq_setup

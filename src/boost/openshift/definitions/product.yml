@@ -1,0 +1,47 @@
+---
+# boost version
+boost:
+  version: master
+
+# product definition
+product:
+  name: simple-todo
+  description: Simple Todo Demo
+
+# openshift cluster definition
+openshift:
+  domain: openshift1.lab.local
+  username: admin
+  password: admin
+
+# Task Manager
+task_manager:
+  name: trello
+  title: Features
+
+# wiremock
+wiremock:
+  tag: 2.25.1
+
+# github
+github:
+  user: "{{ credentials.github.user }}"
+  password: "{{ credentials.github.password }}"
+
+# trello
+trello:
+  access_token: "{{ credentials.trello.access_token }}"
+  api_key: "{{ credentials.trello.api_key }}"
+
+# couchbase
+couchbase:
+  user: Adminstrator
+  password: password
+
+# git webhooks
+webhooks:
+  setup:
+    - name: boostcd.github_webhook_setup
+
+  teardown:
+    - name: boostcd.github_webhook_teardown

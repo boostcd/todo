@@ -1,0 +1,7 @@
+---
+# Developer Environment definition
+developer_environment:
+  test: false
+  setup: 
+    - name: boostcd.amq_setup
+    - name: boostcd.wiremock_setup  

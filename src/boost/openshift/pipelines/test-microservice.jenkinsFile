@@ -1,0 +1,21 @@
+node("maven") {
+
+	properties([
+	  parameters([
+	     string(name: 'PRODUCT'), 
+	     string(name: 'REPO'), 
+	     string(name: 'MICROSERVICE'),
+	  ]),
+	])
+
+	stage("checkout") {
+		git branch: "master", credentialsId: "git", url: params.REPO
+	}
+	
+	stage("execute the container tests") {
+		withMaven(mavenSettingsConfig: 'maven') {
+			sh "mvn clean verify -P integration-test"
+		}    		
+	}		
+
+}

@@ -1,0 +1,53 @@
+---
+# Environments definition
+environments:
+
+  smoke_test_repo: https://github.com/boostcd/todo-smoke-test.git
+
+  setup:
+    - name: boostcd.nexus_setup     
+
+  monitoring:
+    - name: boostcd.jaeger_setup
+
+  databases:
+    - name: boostcd.couchbase_setup
+
+  stages:
+    - name: build
+      display: Build
+      description: Build Environment   
+      setup:
+        - name: boostcd.wiremock_setup
+
+    - name: test
+      display: Test
+      description: Test Environment
+      test_repo: https://github.com/boostcd/todo-test.git
+      setup:
+        - name: boostcd.amq_setup
+  
+    - name: perf
+      display: Performance
+      description: Performance Test Environment
+      test_repo: https://github.com/boostcd/todo-perf.git
+      setup:
+        - name: boostcd.amq_setup      
+    
+    - name: security
+      display: Security
+      description: Security Test Environment
+      test_repo: https://github.com/boostcd/todo-security.git
+      setup:
+        - name: boostcd.amq_setup       
+                    
+    - name: prod
+      display: Production
+      description: Production Environment
+      test_repo: https://github.com/boostcd/todo-prod.git
+      setup:    
+        - name: boostcd.amq_setup
+          application_name: blue  
+        - name: boostcd.amq_setup
+          application_name: green
+  
