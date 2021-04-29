@@ -2,7 +2,7 @@
 # Environments definition
 environments:
 
-  smoke_test_repo: https://github.com/boostcd/todo-smoke-test.git
+  smoke_test_repo: https://github.com/dennyjoe/todo-smoke-test.git
 
   setup:
     - name: boostcd.nexus_setup     
@@ -23,28 +23,28 @@ environments:
     - name: test
       display: Test
       description: Test Environment
-      test_repo: https://github.com/boostcd/todo-test.git
+      test_repo: https://github.com/dennyjoe/todo-test.git
       setup:
         - name: boostcd.amq_setup
   
     - name: perf
       display: Performance
       description: Performance Test Environment
-      test_repo: https://github.com/boostcd/todo-perf.git
+      test_repo: https://github.com/dennyjoe/todo-perf.git
       setup:
         - name: boostcd.amq_setup      
     
     - name: security
       display: Security
       description: Security Test Environment
-      test_repo: https://github.com/boostcd/todo-security.git
+      test_repo: https://github.com/dennyjoe/todo-security.git
       setup:
         - name: boostcd.amq_setup       
                     
     - name: prod
       display: Production
       description: Production Environment
-      test_repo: https://github.com/boostcd/todo-prod.git
+      test_repo: https://github.com/dennyjoe/todo-prod.git
       setup:    
         - name: boostcd.amq_setup
           application_name: blue  

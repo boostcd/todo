@@ -2,27 +2,17 @@
 # Project definition - add new microservices here
 microservices:
 
-  - name: console-ui     
-    repo: https://github.com/Estafet-LTD/blockchain-demo-console-ui.git
+  - name: todo-ui     
+    repo: https://github.com/dennyjoe/todo-ui.git
     test: test-microservice.jenkinsFile     
     expose: true
           
-  - name: blockchain-gateway-ms
-    repo: https://github.com/Estafet-LTD/blockchain-demo-blockchain-gateway-ms.git
+  - name: task-ms
+    repo: https://github.com/dennyjoe/todo-task.git
     test: test-microservice.jenkinsFile     
     expose: false
 
-  - name: wallet-ms
-    repo: https://github.com/Estafet-LTD/blockchain-demo-wallet-ms.git
+  - name: completed-ms
+    repo: https://github.com/dennyjoe/todo-completed.git
     test: test-microservice.jenkinsFile
     expose: false
-
-  - name: bank-ms
-    repo: https://github.com/Estafet-LTD/blockchain-demo-bank-ms.git
-    test: test-microservice.jenkinsFile
-    expose: false
-        
-  - name: currency-converter-ms
-    repo: https://github.com/Estafet-LTD/blockchain-demo-currency-converter-ms.git
-    test: test-microservice.jenkinsFile
-    expose: false 
