@@ -19,6 +19,7 @@ environments:
       description: Build Environment   
       setup:
         - name: boostcd.wiremock_setup
+        - name: boostcd.amq_setup
 
     - name: test
       display: Test
