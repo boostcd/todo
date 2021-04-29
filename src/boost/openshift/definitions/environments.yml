@@ -2,6 +2,7 @@
 # Environments definition
 environments:
 
+  # Consists of smoke tests that are executed each time a change is made to an environment
   smoke_test_repo: https://github.com/dennyjoe/todo-smoke-test.git
 
   setup:
@@ -13,12 +14,16 @@ environments:
   databases:
     - name: boostcd.couchbase_setup
 
+  # Stages represent the environments that the product progresses through
+  # features are creating in the build environment and eventually progress
+  # to product.
   stages:
     - name: build
       display: Build
       description: Build Environment   
       setup:
         - name: boostcd.wiremock_setup
+          tag: 2.25.1
         - name: boostcd.amq_setup
 
     - name: test

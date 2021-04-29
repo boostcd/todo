@@ -19,10 +19,6 @@ task_manager:
   name: trello
   title: Features
 
-# wiremock
-wiremock:
-  tag: 2.25.1
-
 # github
 github:
   user: "{{ credentials.github.user }}"
