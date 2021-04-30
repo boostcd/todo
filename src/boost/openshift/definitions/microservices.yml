@@ -7,12 +7,12 @@ microservices:
     test: test-microservice.jenkinsFile     
     expose: true
           
-  - name: task-ms
-    repo: https://github.com/dennyjoe/todo-task.git
+  - name: item-ms
+    repo: https://github.com/dennyjoe/todo-item.git
     test: test-microservice.jenkinsFile     
     expose: false
 
-  - name: completed-ms
-    repo: https://github.com/dennyjoe/todo-completed.git
+  - name: list-ms
+    repo: https://github.com/dennyjoe/todo-list.git
     test: test-microservice.jenkinsFile
     expose: false

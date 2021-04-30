@@ -14,9 +14,8 @@ environments:
   databases:
     - name: boostcd.couchbase_setup
 
-  # Stages represent the environments that the product progresses through
-  # features are creating in the build environment and eventually progress
-  # to product.
+  # Stages represent the environments that the product progresses through are creating in the build
+  # environment and eventually progress to product.
   stages:
     - name: build
       display: Build
