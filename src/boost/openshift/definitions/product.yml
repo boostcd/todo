@@ -5,8 +5,8 @@ boost:
 
 # product definition
 product:
-  name: simple-todo
-  description: Simple Todo Demo
+  name: todo
+  description: Simple Todo
 
 # openshift cluster definition
 openshift:
@@ -19,11 +19,6 @@ task_manager:
   name: trello
   title: Features
 
-# github
-github:
-  user: "{{ credentials.github.user }}"
-  password: "{{ credentials.github.password }}"
-
 # trello
 trello:
   access_token: "{{ credentials.trello.access_token }}"
@@ -35,9 +30,9 @@ couchbase:
   password: password
 
 # git webhooks
-webhooks:
-  setup:
-    - name: boostcd.github_webhook_setup
-
-  teardown:
-    - name: boostcd.github_webhook_teardown
+git:
+  user: "{{ credentials.github.user }}"
+  password: "{{ credentials.github.password }}"
+  webhooks:
+    setup: boostcd.github_webhook_setup
+    teardown: boostcd.github_webhook_teardown
