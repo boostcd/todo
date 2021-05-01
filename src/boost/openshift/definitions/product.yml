@@ -29,7 +29,7 @@ couchbase:
   user: Adminstrator
   password: password
 
-# git webhooks
+# git definition
 git:
   user: "{{ credentials.github.user }}"
   password: "{{ credentials.github.password }}"
